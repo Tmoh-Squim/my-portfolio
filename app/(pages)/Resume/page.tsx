@@ -55,17 +55,15 @@ const Page = () => {
   return (
     <div className="bg-gray-900 text-white">
       {/* Header Section */}
-      <header className="text-center flex items-center py-2 px-4 header">
+      <header className=" flex items-center py-5 px-4  header">
         <div>
         <h1 className="text-3xl font-bold leading-tight mt-4">Timothy Kaingati</h1>
         <p className="text-lg text-gray-400 mt-2">Crafting elegant, responsive web experiences</p>
         </div>
-        <Image 
+        <img 
           src="/Profile1.png" 
           alt="Profile Picture" 
-          width={150} 
-          height={150} 
-          className="rounded-full  mx-auto profile-pic shadow-sm" 
+          className="rounded-full w-[250px] h-[250px] my-auto  mx-auto profile-pic shadow-sm" 
         />
       </header>
 
@@ -108,11 +106,6 @@ const Page = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer Section */}
-      <footer className="py-4 text-center bg-gray-800">
-        <p className="text-gray-400">© 2025 Timothy Kaingati. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

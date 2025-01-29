@@ -94,7 +94,7 @@ const ProjectsPage = () => {
     <div className="bg-gray-900 h-screen text-white">
       {/* Header Section */}
       <header className="text-center py-16 px-4">
-        <h1 className="text-5xl font-bold leading-tight header">My Projects</h1>
+        <h1 className="text-3xl font-bold leading-tight header">My Projects</h1>
         <p className="text-lg text-gray-400 mt-4">
           Here's a collection of some of the projects I've worked on.
         </p>
@@ -115,11 +115,6 @@ const ProjectsPage = () => {
           ))}
         </div>
       </section>
-
-      {/* Footer Section */}
-      <footer className="py-4 text-center bg-gray-800">
-        <p className="text-gray-400">© 2025 Timothy Kaingati. All rights reserved.</p>
-      </footer>
     </div>
   );
 };

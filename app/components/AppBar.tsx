@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const AppBar = () => {
-  const list = ["Home", "Services", "Resume", "Projects", "Contact", "Hire me"];
+  const list = ["Home", "Services", "Resume", "Projects", "Contact"];
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
   const router = useRouter();

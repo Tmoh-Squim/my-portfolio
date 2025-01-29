@@ -54,7 +54,7 @@ const Page = () => {
     <div className="w-full px-4 800px:h-screen 800px:px-[12%] 1100:px-[20%] bg-gray-900 text-white">
       {/* Header Section */}
       <header className="text-center 800px:py-12 py-2">
-        <h1 className="text-4xl font-bold mb-4 header">Our Services</h1>
+        <h1 className="text-3xl font-bold mb-4 header">Our Services</h1>
         <p className="text-lg text-gray-400">
           Discover what we offer to help you achieve your goals.
         </p>
