@@ -66,7 +66,7 @@ const AppBar = () => {
   return (
     <div className="bg-gray-900 800px:px-[12%] px-2 justify-between flex items-center py-4 ">
       {/* Logo */}
-      <div className="px-4 800px:hidden cursor-pointer" onClick={() => setOpen(!open)}>
+      <div className=" 800px:hidden cursor-pointer" onClick={() => setOpen(!open)}>
         <AiOutlineMenu size={25} color="white" />
       </div>
       <div className="cursor-pointer" onClick={() => router.push("/Home")}>
