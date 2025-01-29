@@ -2,7 +2,9 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
+// Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
@@ -17,6 +19,12 @@ const Page = () => {
       ".header p",
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 1.5, delay: 0.5, ease: "power4.out" }
+    );
+
+    gsap.fromTo(
+      ".profile-pic",
+      { opacity: 0, scale: 0.5 },
+      { opacity: 1, scale: 1, duration: 1.5, delay: 0.8, ease: "power4.out" }
     );
     
     gsap.fromTo(
@@ -47,62 +55,57 @@ const Page = () => {
   return (
     <div className="bg-gray-900 text-white">
       {/* Header Section */}
-      <header className="text-center py-16 px-4">
-        <h1 className="text-5xl font-bold leading-tight header">Timothy Kaingati</h1>
-        <p className="text-lg text-gray-400 mt-4">Crafting elegant, responsive web experiences</p>
+      <header className="text-center flex items-center py-2 px-4 header">
+        <div>
+        <h1 className="text-3xl font-bold leading-tight mt-4">Timothy Kaingati</h1>
+        <p className="text-lg text-gray-400 mt-2">Crafting elegant, responsive web experiences</p>
+        </div>
+        <Image 
+          src="/Profile1.png" 
+          alt="Profile Picture" 
+          width={150} 
+          height={150} 
+          className="rounded-full  mx-auto profile-pic shadow-sm" 
+        />
       </header>
 
-      {/* About Me Section */}
-      <section className="py-16 px-4">
-        <h2 className="text-4xl font-semibold text-center mb-6">About Me</h2>
-        <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-          I'm a passionate software developer who specializes in creating innovative web applications. With proficiency in multiple technologies and a knack for problem-solving, my goal is to build websites that are not only functional but also delightful to use.
-        </p>
-      </section>
-
-      {/* Skills Section with Progress Bars */}
-      <section className="py-16 px-4 bg-gray-800 skills-section">
-        <h2 className="text-4xl font-semibold text-center mb-6">Skills</h2>
-        <div className="space-y-8">
-          {[
-            { name: "JavaScript", level: 90 },
-            { name: "React", level: 85 },
-            { name: "Node.js", level: 80 },
-            { name: "Tailwind CSS", level: 95 },
-            { name: "UI/UX Design", level: 70 },
-            { name: "TypeScript", level: 80 },
-            { name: "MongoDB", level: 75 },
-            { name: "Express.js", level: 80 }
-          ].map((skill, index) => (
-            <div key={index}>
-              <div className="flex justify-between items-center mb-2">
-                <span className="font-semibold text-lg">{skill.name}</span>
-                <span className="text-gray-400">{skill.level}%</span>
-              </div>
-              <div className="w-full h-2 bg-gray-600 rounded-full overflow-hidden">
-                <div
-                  className="skill-bar h-full bg-blue-500"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
-              </div>
+      {/* Experience and Education Timeline Section */}
+      <section className="py-6 px-4 bg-gray-800">
+        <h2 className="text-2xl font-semibold text-center mb-6">My Resume</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Experience Section */}
+          <div>
+            <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-500">Experience</h3>
+            <div className="border-l-4 border-yellow-500 pl-6 space-y-6">
+              {[{ role: "Consultant", company: "Raesa, Rs", desc: "User Experience, Visual Design", duration: "2020 - Present" },
+                { role: "Full Stack Developer", company: "Fiver", desc: "Web development, Databases, Backend development", duration: "2020 - Present" },
+                { role: "Project Manager", company: "Kirinyaga, KENYA", desc: "Creative Direction, Team Management", duration: "2018 - 2020" }
+              ].map((exp, index) => (
+                <div key={index} className="bg-gray-900 p-4 border-2 border-yellow-500 rounded-lg shadow-lg">
+                  <h4 className="font-bold">{exp.role} <span className="text-yellow-400">{exp.company}</span></h4>
+                  <p className="text-gray-400">{exp.desc}</p>
+                  <span className="text-sm text-gray-500">{exp.duration}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
 
-      {/* Contact Section */}
-      <section className="py-16 px-4 bg-gray-800">
-        <h2 className="text-4xl font-semibold text-center mb-6">Get In Touch</h2>
-        <p className="text-center text-gray-400 mb-6">
-          I'm always open to exciting opportunities! If you're interested in collaborating or just want to chat, feel free to reach out.
-        </p>
-        <div className="flex justify-center">
-          <a
-            href="mailto:timothykaingati@gmail.com"
-            className="contact-btn px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
-          >
-            Email Me
-          </a>
+          {/* Education Section */}
+          <div>
+            <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-500">Education</h3>
+            <div className="border-l-4 border-yellow-500 pl-6 space-y-6">
+              {[{ school: "Secondary Munyuini School", degree: "10th Grade", duration: "2020 - Present" },
+                { school: "Higher Secondary Munyuini School of Higher Education", degree: "12th Grade in Science", duration: "2020 - Present" },
+                { school: "B.SWE Kirinyaga University", degree: "Bachelor of Software Engineering", duration: "Present" }
+              ].map((edu, index) => (
+                <div key={index} className="bg-gray-900 p-4 border-2 border-yellow-500 rounded-lg shadow-lg">
+                  <h4 className="font-bold">{edu.school}</h4>
+                  <p className="text-gray-400">{edu.degree}</p>
+                  <span className="text-sm text-gray-500">{edu.duration}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

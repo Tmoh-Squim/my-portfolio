@@ -32,8 +32,6 @@ const page = () => {
     )
     .then(
       (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        // Handle successful response
         alert("Message sent successfully!");
         setFormData({
           user_name:"",
