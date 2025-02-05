@@ -96,7 +96,7 @@ const ProjectsPage = () => {
       <header className="text-center py-16 px-4">
         <h1 className="text-3xl font-bold leading-tight header">My Projects</h1>
         <p className="text-lg text-gray-400 mt-4">
-          Here's a collection of some of the projects I've worked on.
+          Here&apos;s a collection of some of the projects I&apos;ve worked on.
         </p>
       </header>
 
