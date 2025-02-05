@@ -154,7 +154,7 @@ const HomePage = () => {
               <FaTwitter size={15} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://wa.me/2540748143442?text="
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-500 border-green-500 border-[2px] rounded-full p-1 hover:bg-green-500 hover:text-black transition-all text-2xl"
