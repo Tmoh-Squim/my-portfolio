@@ -95,7 +95,7 @@ const Page = () => {
             <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-500">Education</h3>
             <div className="border-l-4 border-yellow-500 800px:pl-6 pl-3 space-y-6">
               {[{ school: "B.SWE Kirinyaga University", degree: "Bachelor of Software Engineering", duration: "Present" },
-                { school: "Secondary Munyuini School", degree: "10th Grade", duration: "2020 - Present" },
+                { school: "W3 School", degree: "Web development", duration: "2020 - 2021" },
                 { school: "Higher Secondary Munyuini School of Higher Education", degree: "12th Grade in Science", duration: "2018 - 2021" },
               ].map((edu, index) => (
                 <div key={index} className="bg-gray-900 p-4 border-2 border-yellow-500 rounded-lg shadow-lg">
