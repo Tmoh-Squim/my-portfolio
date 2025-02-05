@@ -72,9 +72,9 @@ const HomePage = () => {
   };
 
   return (
-    <div className="px-[10px] z-0 1500px:px-[20%] 800px:px-[12%] py-4 bg-gray-900 min-h-screen text-white">
+    <div className="px-[10px] z-0 1500px:px-[20%] 800px:px-[12%] py-2 bg-gray-900 min-h-screen text-white">
       {/* Main Content */}
-      <div className="800px:flex block 800px:gap-10 gap-3">
+      <div className="800px:flex block 800px:gap-10 ">
         {/* Portfolio Personal Details */}
         <div className="800px:w-[60%] fade-in">
           <p className="text-gray-500 800px:text-sm">Software Developer</p>
