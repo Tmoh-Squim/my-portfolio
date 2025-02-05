@@ -54,7 +54,7 @@ const ProjectCard = ({ title, description, link, github, image }: any) => {
 
   return (
     <div className="project-card bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow cursor-pointer">
-      <img src={image} alt={title} className="w-full object-fill h-50" />
+      <img src={image} alt={title} className="w-full object-fill h-100" />
       <div className="p-6">
         <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
         <p className="text-gray-400 mb-4">{description}</p>
