@@ -82,7 +82,7 @@ const HomePage = () => {
             Hello, I&apos;m
           </h1>
           <span className="text-blue-500 text-4xl mt-2 font-bold tracking-wider">
-            {splitText("Timothy Kaingati")}
+            {splitText("Timothy  Kaingati")}
           </span>
           <div className="text-gray-400 mt-4 space-y-1">
             <p>I excel at crafting elegant digital experiences.</p>
@@ -91,7 +91,7 @@ const HomePage = () => {
             </p>
           </div>
           <button
-            className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
+            className="mt-6 px-6 py-3 bg-blue-400 text-white rounded-lg hover:bg-blue-600 transition-all"
             onClick={() => router.push("/Contact")}
           >
             Contact Me
@@ -99,13 +99,11 @@ const HomePage = () => {
         </div>
 
         {/* Portfolio Image */}
-        <div className="800px:w-[40%] cursor-grab flex justify-center items-center relative ">
-          <Image
+        <div className="800px:w-[40%] cursor-grab  800px:mt-8 mt-4 ">
+          <img
             ref={imageRef}
-            src="/Profile1.png"
-            width={250}
-            height={250}
-            className="rounded-full object-cover w-[350px] h-[350px] image-bounce"
+            src="/Profile2.png"
+            className="rounded-full  mb-2 w-[250px] 800px:w-[280px] 800px:h-[280px] mx-auto my-auto  h-[250px] image-bounce"
             alt="Portfolio of Timothy Kaingati"
           />
         </div>

@@ -56,16 +56,16 @@ const Page = () => {
     <div className="bg-gray-900 text-white">
       {/* Header Section */}
       <header className=" 800px:flex items-center px-4 800px:py-12 py-2  header">
-        <div>
+        <div >
         <h1 className="text-3xl font-bold leading-tight mt-4">Timothy Kaingati</h1>
         <p className="text-lg text-gray-400 mt-2">Crafting elegant, responsive web experiences</p>
         </div>
         <Image
-          src="/Profile1.png" 
+          src="/Profile2.png" 
           alt="Profile Picture"
           width={250}
           height={250}
-          className="rounded-full w-[250px] h-[250px] my-auto  mx-auto profile-pic shadow-sm" 
+          className="rounded-full  w-[250px] h-[250px] my-2  mx-auto profile-pic shadow-sm" 
         />
       </header>
 
