@@ -71,7 +71,7 @@ const Page = () => {
 
       {/* Experience and Education Timeline Section */}
       <section className="py-6 px-4 bg-gray-800">
-        <h2 className="text-2xl font-semibold text-center mb-6">My Resume</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6 hidden 800px:block">My Resume</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {/* Experience Section */}
           <div>
