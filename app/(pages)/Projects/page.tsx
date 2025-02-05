@@ -93,7 +93,7 @@ const ProjectsPage = () => {
   return (
     <div className="bg-gray-900 800px:h-screen text-white">
       {/* Header Section */}
-      <header className="text-center py-16 px-4">
+      <header className="text-center 800px:py-12 py-2 px-4">
         <h1 className="text-3xl font-bold leading-tight header">My Projects</h1>
         <p className="text-lg text-gray-400 mt-4">
           Here&apos;s a collection of some of the projects I&apos;ve worked on.

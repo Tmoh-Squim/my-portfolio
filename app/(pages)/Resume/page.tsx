@@ -55,7 +55,7 @@ const Page = () => {
   return (
     <div className="bg-gray-900 text-white">
       {/* Header Section */}
-      <header className=" 800px:flex items-center py-5 px-4  header">
+      <header className=" 800px:flex items-center px-4 800px:py-12 py-2  header">
         <div>
         <h1 className="text-3xl font-bold leading-tight mt-4">Timothy Kaingati</h1>
         <p className="text-lg text-gray-400 mt-2">Crafting elegant, responsive web experiences</p>

@@ -88,7 +88,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-gray-900 800px:px-[12%] py-2 text-white">
+    <div className="w-full 800px:h-screen bg-gray-900 800px:px-[12%] 800px:py-12 py-2 text-white">
       <div className="flex justify-center items-center h-full">
         <form
           onSubmit={handleSubmit}
