@@ -70,7 +70,7 @@ const AppBar = () => {
         <AiOutlineMenu size={25} color="white" />
       </div>
       <div className="cursor-pointer" onClick={() => router.push("/Home")}>
-        <h1 className="text-[30px] text-blue-400 font-bold hover:text-green-500">
+        <h1 className="text-[30px] text-gray-300 font-bold hover:text-blue-500">
           Timothy
         </h1>
       </div>

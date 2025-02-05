@@ -76,10 +76,10 @@ const Page = () => {
           {/* Experience Section */}
           <div>
             <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-500">Experience</h3>
-            <div className="border-l-4 border-yellow-500 pl-6 space-y-6">
-              {[{ role: "Consultant", company: "Raesa, Rs", desc: "User Experience, Visual Design", duration: "2020 - Present" },
-                { role: "Full Stack Developer", company: "Fiver", desc: "Web development, Databases, Backend development", duration: "2020 - Present" },
-                { role: "Project Manager", company: "Kirinyaga, KENYA", desc: "Creative Direction, Team Management", duration: "2018 - 2020" }
+            <div className="border-l-4 border-yellow-500 800px:pl-6 pl-3 space-y-6">
+              {[ { role: "Full Stack Developer", company: "Fiver", desc: "Web development, Databases, Backend development", duration: "2024 - Present" },
+                { role: "Frontend Developer", company: "Ajira, KENYA", desc: "Web development, React and Next js", duration: "2024" },
+                { role: "Project Manager", company: "Kirinyaga, KENYA", desc: "Creative Direction, Team Management", duration: "2022 - 2024" }
               ].map((exp, index) => (
                 <div key={index} className="bg-gray-900 p-4 border-2 border-yellow-500 rounded-lg shadow-lg">
                   <h4 className="font-bold">{exp.role} <span className="text-yellow-400">{exp.company}</span></h4>
@@ -93,10 +93,10 @@ const Page = () => {
           {/* Education Section */}
           <div>
             <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-500">Education</h3>
-            <div className="border-l-4 border-yellow-500 pl-6 space-y-6">
-              {[{ school: "Secondary Munyuini School", degree: "10th Grade", duration: "2020 - Present" },
-                { school: "Higher Secondary Munyuini School of Higher Education", degree: "12th Grade in Science", duration: "2020 - Present" },
-                { school: "B.SWE Kirinyaga University", degree: "Bachelor of Software Engineering", duration: "Present" }
+            <div className="border-l-4 border-yellow-500 800px:pl-6 pl-3 space-y-6">
+              {[{ school: "B.SWE Kirinyaga University", degree: "Bachelor of Software Engineering", duration: "Present" },
+                { school: "Secondary Munyuini School", degree: "10th Grade", duration: "2020 - Present" },
+                { school: "Higher Secondary Munyuini School of Higher Education", degree: "12th Grade in Science", duration: "2018 - 2021" },
               ].map((edu, index) => (
                 <div key={index} className="bg-gray-900 p-4 border-2 border-yellow-500 rounded-lg shadow-lg">
                   <h4 className="font-bold">{edu.school}</h4>
