@@ -55,14 +55,16 @@ const Page = () => {
   return (
     <div className="bg-gray-900 text-white">
       {/* Header Section */}
-      <header className=" flex items-center py-5 px-4  header">
+      <header className=" 800px:flex items-center py-5 px-4  header">
         <div>
         <h1 className="text-3xl font-bold leading-tight mt-4">Timothy Kaingati</h1>
         <p className="text-lg text-gray-400 mt-2">Crafting elegant, responsive web experiences</p>
         </div>
-        <img 
+        <Image
           src="/Profile1.png" 
-          alt="Profile Picture" 
+          alt="Profile Picture"
+          width={250}
+          height={250}
           className="rounded-full w-[250px] h-[250px] my-auto  mx-auto profile-pic shadow-sm" 
         />
       </header>

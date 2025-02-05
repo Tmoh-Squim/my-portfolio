@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import emailjs from "@emailjs/browser"
-const page = () => {
+const Page = () => {
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
@@ -163,4 +163,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

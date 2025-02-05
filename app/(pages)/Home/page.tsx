@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { gsap } from "gsap";
 import { AiOutlineDownload } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const HomePage = () => {
   const router = useRouter();
@@ -78,7 +79,7 @@ const HomePage = () => {
         <div className="800px:w-[60%] fade-in">
           <p className="text-gray-500 800px:text-sm">Software Developer</p>
           <h1 className="text-4xl font-bold text-white tracking-wider">
-            Hello, I'm
+            Hello, I&apos;m
           </h1>
           <span className="text-blue-500 text-4xl mt-2 font-bold tracking-wider">
             {splitText("Timothy Kaingati")}
@@ -99,9 +100,11 @@ const HomePage = () => {
 
         {/* Portfolio Image */}
         <div className="800px:w-[40%] cursor-grab flex justify-center items-center relative ">
-          <img
+          <Image
             ref={imageRef}
             src="/Profile1.png"
+            width={250}
+            height={250}
             className="rounded-full object-cover w-[350px] h-[350px] image-bounce"
             alt="Portfolio of Timothy Kaingati"
           />
