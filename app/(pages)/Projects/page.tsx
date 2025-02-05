@@ -91,7 +91,7 @@ const ProjectsPage = () => {
   }, []);
 
   return (
-    <div className="bg-gray-900 h-screen text-white">
+    <div className="bg-gray-900 800px:h-screen text-white">
       {/* Header Section */}
       <header className="text-center py-16 px-4">
         <h1 className="text-3xl font-bold leading-tight header">My Projects</h1>
