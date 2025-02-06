@@ -39,29 +39,18 @@ const AppBar = () => {
     if (open) {
       gsap.fromTo(
         phoneScreenRef.current,
-        { x: "-100%", opacity: 0 }, // Initial position off-screen to the left
-        {
-          x: "0%",
-          opacity: 1,
-          duration: 0.5,
-          ease: "power3.out",
-        }
+        { x: "-100%", opacity: 0 },
+        { x: "0%", opacity: 1, duration: 0.5, ease: "power3.out" }
       );
     } else {
       gsap.to(phoneScreenRef.current, {
         x: "-100%",
         opacity: 0,
         duration: 0.5,
-        ease: "power3.inOut",
+        ease: "power3.in",
       });
     }
   }, [open]);
-
-  useEffect(() => {
-    if (active !== 0) {
-      setOpen(false);
-    }
-  }, [active]);
 
   return (
     <div className="bg-gray-900 800px:px-[12%] px-2 justify-between flex items-center py-4 ">
@@ -103,7 +92,9 @@ const AppBar = () => {
       {open && (
         <div
           ref={phoneScreenRef}
-          className="h-max px-3 pt-4 pb-8 w-[50%] absolute top-0 left-0 z-50 bg-gray-800 block gap-[60px]"
+          className={`h-max px-3 pt-4 pb-8 w-[12rem] absolute top-0 left-0 z-50 bg-gray-800 block gap-[60px] ${
+            open ? "translate-x-0" : "-translate-x-full"
+          }`}
         >
           <div
             className="cursor-pointer justify-end w-full flex mb-2"
@@ -122,6 +113,7 @@ const AppBar = () => {
               }`}
               onClick={() => {
                 setActive(index);
+                setOpen(false)
                 router.push(`${item}`);
               }}
             >
