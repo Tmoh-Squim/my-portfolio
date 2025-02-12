@@ -4,18 +4,25 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: rgb(17 24 39 / var(--tw-bg-opacity, 1));
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: rgb(17 24 39 / var(--tw-bg-opacity, 1));
     --foreground: #ededed;
   }
 }
 
+.dark {
+  --background: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+  --foreground: #ffffff;
+}
+
+/* Smooth transition for theme switch */
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;  /* Smooth transition */
 }

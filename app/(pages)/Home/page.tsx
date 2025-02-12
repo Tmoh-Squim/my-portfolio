@@ -72,13 +72,13 @@ const HomePage = () => {
   };
 
   return (
-    <div className="px-[10px] z-0 1500px:px-[20%] 800px:px-[12%] py-2 bg-gray-900 min-h-screen text-white">
+    <div className="px-[10px] z-0 1500px:px-[20%] 800px:px-[12%] py-2 bg-foreground min-h-screen text-background">
       {/* Main Content */}
       <div className="800px:flex block 800px:gap-10 ">
         {/* Portfolio Personal Details */}
         <div className="800px:w-[60%] fade-in">
           <p className="text-gray-500 800px:text-sm">Software Developer</p>
-          <h1 className="text-4xl font-bold text-white tracking-wider">
+          <h1 className="text-4xl font-bold text-bacground tracking-wider">
             Hello, I&apos;m
           </h1>
           <span className="text-blue-500 text-4xl mt-2 font-bold tracking-wider">
@@ -91,7 +91,7 @@ const HomePage = () => {
             </p>
           </div>
           <button
-            className="mt-6 px-6 py-3 bg-blue-400 text-white rounded-lg hover:bg-blue-600 transition-all"
+            className="mt-6 px-6 py-3 bg-blue-400 text-background rounded-lg hover:bg-blue-600 transition-all"
             onClick={() => router.push("/Contact")}
           >
             Contact Me

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import emailjs from "@emailjs/browser"
-const Page = () => {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
@@ -88,12 +88,12 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="w-full 800px:h-screen bg-gray-900 800px:px-[12%] 800px:py-12 py-2 text-white">
+    <div className="w-full 800px:h-screen bg-foreground 800px:px-[12%] 800px:py-12 py-2 text-background">
       <div className="flex justify-center items-center h-full">
         <form
           onSubmit={handleSubmit}
           ref={formRef}
-          className="bg-gray-800 p-8 rounded-lg w-full max-w-3xl space-y-6"
+          className="bg-foreground p-8 rounded-lg w-full max-w-3xl shadow-lg space-y-6"
         >
           <h2 className="text-3xl font-bold text-center text-blue-500 mb-6">Contact Me</h2>
 
@@ -108,7 +108,7 @@ const Page = () => {
                 value={formData.user_name}
                 onChange={handleChange}
                 ref={nameRef}  // Set the ref to the input
-                className="p-3 bg-gray-700 rounded-md text-white border-2 border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="p-3 bg-gray-100 rounded-md text-background border-1 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Name"
                 required
               />
@@ -124,7 +124,7 @@ const Page = () => {
                 value={formData.user_email}
                 onChange={handleChange}
                 ref={emailRef}  // Set the ref to the input
-                className="p-3 bg-gray-700 rounded-md text-white border-2 border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="p-3 bg-gray-100 rounded-md text-background border-1 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Email"
                 required
               />
@@ -139,7 +139,7 @@ const Page = () => {
                 value={formData.message}
                 onChange={handleChange}
                 ref={messageRef}  // Set the ref to the textarea
-                className="p-3 bg-gray-700 rounded-md text-white border-2 border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="p-3 bg-gray-100 rounded-md text-background border-1 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Message"
                 rows={5}
                 required
@@ -151,7 +151,7 @@ const Page = () => {
               <button
                 type="submit"
                 ref={submitBtnRef}  // Set the ref to the submit button
-                className="px-6 py-3 bg-blue-500 text-white rounded-lg w-full hover:bg-blue-600 transition-all"
+                className="px-6 py-3 bg-blue-500 text-background rounded-lg w-full hover:bg-blue-600 transition-all"
               >
                 Send Message
               </button>
@@ -163,4 +163,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ContactPage;

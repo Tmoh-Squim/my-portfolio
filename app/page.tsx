@@ -1,7 +1,7 @@
-import HomePage from "./(pages)/Home/page";
+import AppBar from "./components/AppBar";
 
 export default function Home() {
   return (
-    <HomePage />
+    <AppBar />
   );
 }

@@ -42,21 +42,21 @@ const ServiceCard = ({ title, description }: ServiceCardProps) => {
   }, []);
 
   return (
-    <div className="service-card bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl 800px:w-[31%] mt-3 800px:mt-0 transition-shadow">
+    <div className="service-card bg-foreground rounded-2xl p-6 shadow-lg hover:shadow-xl 800px:w-[31%] mt-3 800px:mt-0 transition-shadow">
       <h2 className="text-xl font-semibold mb-3">{title}</h2>
       <p className="text-gray-400">{description}</p>
     </div>
   );
 };
 
-const Page = () => {
+const ServicesPage = () => {
   return (
-    <div className="w-full px-4 800px:h-screen 800px:px-[12%] 1100:px-[20%] bg-gray-900 text-white">
+    <div className="w-full px-4 800px:h-screen 800px:px-[12%] 1100:px-[20%] bg-foreground text-background">
       {/* Header Section */}
       <header className="text-center 800px:py-12 py-2">
         <h1 className="text-3xl font-bold mb-4 header">Our Services</h1>
         <p className="text-lg text-gray-400">
-          Discover what we offer to help you achieve your goals.
+          Discover what I offer to help you achieve your goals.
         </p>
       </header>
 
@@ -74,4 +74,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ServicesPage;
