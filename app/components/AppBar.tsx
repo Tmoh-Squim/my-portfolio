@@ -2,26 +2,29 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMoon, AiOutlineSun } from "react-icons/ai";
-import Home from "../page";
-import ServicesPage from "../(pages)/Services/page";
-import ResumePage from "../(pages)/Resume/page";
-import ProjectsPage from "../(pages)/Projects/page";
-import ContactPage from "../(pages)/Contact/page";
+import dynamic from "next/dynamic";
+import Footer from "./Footer";
+
+const pages = {
+  Home: dynamic(() => import("../(pages)/Home/page")),
+  Services: dynamic(() => import("../(pages)/Services/page")),
+  Resume: dynamic(() => import("../(pages)/Resume/page")),
+  Projects: dynamic(() => import("../(pages)/Projects/page")),
+  Contact: dynamic(() => import("../(pages)/Contact/page")),
+};
+const list = Object.keys(pages);
 
 const AppBar = () => {
-  const pages = { Home, ServicesPage, ResumePage, ProjectsPage, ContactPage };
-  const list = Object.keys(pages);
-  
   const [activePage, setActivePage] = useState<keyof typeof pages>("Home");
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState("dark");
 
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  const setItemRef = (index: number) => (el: HTMLDivElement | null) => {
+  const setItemRef = (index: number) => (el: HTMLDivElement | null): void => {
     itemsRef.current[index] = el;
   };
-    const phoneScreenRef = useRef(null);
+  
+  const phoneScreenRef = useRef(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -32,107 +35,98 @@ const AppBar = () => {
   }, []);
 
   useEffect(() => {
-    if (itemsRef.current[list.indexOf(activePage)]) {
-      gsap.to(itemsRef.current[list.indexOf(activePage)], {
-        scale: 1.2,
-        duration: 0.3,
-        ease: "power3.out",
-      });
-    }
     itemsRef.current.forEach((item, index) => {
-      if (item && list[index] !== activePage) {
-        gsap.to(item, { scale: 1, duration: 0.3, ease: "power3.out" });
+      if (item) {
+        gsap.to(item, {
+          scale: activePage === list[index] ? 1.2 : 1,
+          duration: 0.3,
+          ease: "power3.out",
+        });
       }
     });
   }, [activePage]);
 
   useEffect(() => {
-    if (open) {
-      gsap.fromTo(
-        phoneScreenRef.current,
-        { x: "-100%", opacity: 0 },
-        { x: "0%", opacity: 1, duration: 0.5, ease: "power3.out" }
-      );
-    } else {
-      gsap.to(phoneScreenRef.current, {
-        x: "-100%",
-        opacity: 0,
-        duration: 0.5,
-        ease: "power3.in",
-      });
-    }
+    gsap.to(phoneScreenRef.current, {
+      x: open ? "0%" : "-100%",
+      opacity: open ? 1 : 0,
+      duration: 0.5,
+      ease: "power3.inOut",
+    });
   }, [open]);
 
   const CurrentPageComponent = pages[activePage];
 
   return (
-    <div className="bg-foreground 800px:px-[12%] px-2 justify-between flex items-center py-4">
-      <div className="800px:hidden cursor-pointer text-background" onClick={() => setOpen(!open)}>
-        <AiOutlineMenu size={25} />
-      </div>
-      <div className="cursor-pointer" onClick={() => setActivePage("Home")}>
-        <h1 className="text-[30px] text-gray-300 font-bold hover:text-blue-500">Timothy</h1>
+    <div className="flex flex-col h-screen">
+      {/* AppBar */}
+      <div className="bg-foreground py-4 800px:px-[12%] px-2 flex justify-between items-center w-full">
+        <div className="flex items-center justify-between w-full 800px:w-max">
+        <div className="cursor-pointer text-background" onClick={() => setOpen(!open)}>
+          <AiOutlineMenu size={25} className="800px:hidden" />
+        </div>
+        <h1 className="text-[30px] text-gray-300 font-bold hover:text-blue-500 cursor-pointer" onClick={() => setActivePage("Home")}>
+          Timothy
+        </h1>
+        </div>
+
+        <div className="flex items-center gap-6">
+          <div className="hidden 800px:flex gap-5">
+            {list.map((item, index) => (
+              <div
+                key={item}
+                ref={setItemRef(index)}
+                className={`cursor-pointer transition-all ${activePage === item ? "text-blue-500 font-bold" : "text-background"}`}
+                onClick={() => setActivePage(item as keyof typeof pages)}
+              >
+                <h1 className="px-3 py-1">{item}</h1>
+              </div>
+            ))}
+          </div>
+          <div className="hidden 800px:block cursor-pointer text-background" onClick={() => {
+            const newTheme = theme === "light" ? "dark" : "light";
+            setTheme(newTheme);
+            localStorage.setItem("theme", newTheme);
+            document.documentElement.classList.replace(theme, newTheme);
+          }}>
+            {theme === "dark" ? <AiOutlineMoon size={35} /> : <AiOutlineSun size={35} />}
+          </div>
+        </div>
       </div>
 
-      <div className="flex items-center gap-6">
-        <div className="800px:flex gap-5 items-center hidden">
-          {list.map((item, index) => (
-            <div
-              key={item}
-              ref={setItemRef(index)}
-              className={`relative cursor-pointer transition-all ${
-                activePage === item ? "text-blue-500 font-bold" : "text-background"
-              }`}
-              onClick={() => setActivePage(item as keyof typeof pages)}
-            >
-              {activePage === item && (
-                <span className="absolute inset-0 rounded-full bg-blue-500 opacity-20 -z-10" />
-              )}
-              <h1 className="px-3 py-1 relative">{item}</h1>
-            </div>
-          ))}
-        </div>
-        <div className="text-background hidden 800px:block cursor-pointer" onClick={()=>{
-          const newTheme = theme === "light" ? "dark" : "light";
-          setTheme(newTheme);
-          localStorage.setItem("theme", newTheme);
-          document.documentElement.classList.replace(theme, newTheme);
-        }}>
-          {theme === "dark" ? <AiOutlineMoon size={35} /> : <AiOutlineSun size={35} />}
-        </div>
-      </div>
-
+      {/* Sidebar for mobile */}
       {open && (
-        <div
-          ref={phoneScreenRef}
-          className="h-max px-3 pt-4 pb-8 w-[12rem] absolute top-0 left-0 z-50 bg-foreground block gap-[60px]"
-        >
-          <div className="cursor-pointer justify-end text-background w-full flex mb-2" onClick={() => setOpen(false)}>
+        <div ref={phoneScreenRef} className="absolute shadow-lg top-0 left-0 h-full w-[12rem] bg-foreground p-4 z-50">
+          <div className="flex justify-end cursor-pointer text-background mb-4" onClick={() => setOpen(false)}>
             <AiOutlineClose size={28} />
           </div>
           {list.map((item) => (
             <div
               key={item}
-              className={`relative cursor-pointer transition-all ${
-                activePage === item ? "text-blue-500 font-bold" : "text-background"
-              }`}
+              className={`cursor-pointer transition-all ${activePage === item ? "text-blue-500 font-bold" : "text-background"}`}
               onClick={() => {
                 setActivePage(item as keyof typeof pages);
                 setOpen(false);
               }}
             >
-              {activePage === item && (
-                <span className="absolute inset-0 rounded-full bg-blue-500 opacity-20 -z-10" />
-              )}
-              <h1 className="px-3 py-1 relative">{item}</h1>
+              <h1 className="px-3 py-1">{item}</h1>
             </div>
           ))}
+          <div className=" my-6 cursor-pointer flex gap-2 items-center text-background" onClick={() => {
+            const newTheme = theme === "light" ? "dark" : "light";
+            setTheme(newTheme);
+            localStorage.setItem("theme", newTheme);
+            document.documentElement.classList.replace(theme, newTheme);
+          }}>
+            {theme === "dark" ? <AiOutlineMoon size={35} /> : <AiOutlineSun size={35} />} <span>Change theme</span>
+          </div>
         </div>
       )}
 
-      {/* Render Current Page */}
-      <div className="mt-1">
+      {/* Page Content */}
+      <div className="flex-grow w-full overflow-auto">
         <CurrentPageComponent />
+        <Footer />
       </div>
     </div>
   );

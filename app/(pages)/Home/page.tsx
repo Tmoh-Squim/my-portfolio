@@ -4,7 +4,6 @@ import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { gsap } from "gsap";
 import { AiOutlineDownload } from "react-icons/ai";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 const HomePage = () => {
   const router = useRouter();
