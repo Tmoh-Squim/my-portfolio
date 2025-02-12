@@ -131,7 +131,7 @@ const AppBar = () => {
       )}
 
       {/* Render Current Page */}
-      <div className="mt-6">
+      <div className="mt-1">
         <CurrentPageComponent />
       </div>
     </div>
