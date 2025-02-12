@@ -60,7 +60,7 @@ const AppBar = () => {
   return (
     <div className="flex flex-col h-screen">
       {/* AppBar */}
-      <div className="bg-foreground py-4 800px:px-[12%] px-2 flex justify-between items-center w-full">
+      <div className="bg-foreground py-4 shadow-lg  800px:px-[12%] px-2 flex justify-between items-center w-full">
         <div className="flex items-center justify-between w-full 800px:w-max">
         <div className="cursor-pointer text-background" onClick={() => setOpen(!open)}>
           <AiOutlineMenu size={25} className="800px:hidden" />
