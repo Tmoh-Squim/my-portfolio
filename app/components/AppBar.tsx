@@ -25,7 +25,20 @@ const AppBar = () => {
   };
   
   const phoneScreenRef = useRef(null);
-
+    
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    const storedPage = localStorage.getItem("activePage") as keyof typeof pages;
+    if (storedPage) {
+      setActivePage(storedPage);
+    }
+  }
+}, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("activePage", activePage);
+    }
+  }, [activePage]);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme") || "light";
@@ -60,7 +73,7 @@ const AppBar = () => {
   return (
     <div className="flex flex-col h-screen">
       {/* AppBar */}
-      <div className="bg-foreground py-4 shadow-lg  800px:px-[12%] px-2 flex justify-between items-center w-full">
+      <div className="bg-foreground relative z-10 py-4 shadow-sm  800px:px-[12%] px-2 flex justify-between items-center w-full">
         <div className="flex items-center justify-between w-full 800px:w-max">
         <div className="cursor-pointer text-background" onClick={() => setOpen(!open)}>
           <AiOutlineMenu size={25} className="800px:hidden" />

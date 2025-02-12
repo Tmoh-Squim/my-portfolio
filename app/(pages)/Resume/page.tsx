@@ -75,14 +75,14 @@ const ResumePage = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Experience Section */}
           <div>
-            <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-500">Experience</h3>
-            <div className="border-l-4 border-yellow-500 800px:pl-6 pl-3 space-y-6">
+            <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-300">Experience</h3>
+            <div className="border-l-4 border-yellow-300 800px:pl-6 pl-3 space-y-6">
               {[ { role: "Full Stack Developer", company: "Fiver", desc: "Web development, Databases, Backend development", duration: "2024 - Present" },
                 { role: "Frontend Developer", company: "Ajira, KENYA", desc: "Web development, React and Next js", duration: "2024" },
                 { role: "Project Manager", company: "Kirinyaga, KENYA", desc: "Creative Direction, Team Management", duration: "2022 - 2024" }
               ].map((exp, index) => (
-                <div key={index} className="bg-foreground p-4 border-2 border-yellow-500 rounded-lg shadow-lg">
-                  <h4 className="font-bold">{exp.role} <span className="text-yellow-400">{exp.company}</span></h4>
+                <div key={index} className="bg-foreground p-4 border-2 border-yellow-300 rounded-lg shadow-lg">
+                  <h4 className="font-bold">{exp.role} <span className="text-yellow-200">{exp.company}</span></h4>
                   <p className="text-gray-400">{exp.desc}</p>
                   <span className="text-sm text-gray-500">{exp.duration}</span>
                 </div>
@@ -92,13 +92,13 @@ const ResumePage = () => {
 
           {/* Education Section */}
           <div>
-            <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-500">Education</h3>
-            <div className="border-l-4 border-yellow-500 800px:pl-6 pl-3 space-y-6">
+            <h3 className="text-2xl font-semibold text-center mb-4 border-b-2 border-yellow-300">Education</h3>
+            <div className="border-l-4 border-yellow-300 800px:pl-6 pl-3 space-y-6">
               {[{ school: "B.SWE Kirinyaga University", degree: "Bachelor of Software Engineering", duration: "Present" },
                 { school: "W3 School", degree: "Web development", duration: "2020 - 2021" },
                 { school: "Higher Secondary Munyuini School of Higher Education", degree: "12th Grade in Science", duration: "2018 - 2021" },
               ].map((edu, index) => (
-                <div key={index} className="bg-foreground p-4 border-2 border-yellow-500 rounded-lg shadow-lg">
+                <div key={index} className="bg-foreground p-4 border-2 border-yellow-300 rounded-lg shadow-lg">
                   <h4 className="font-bold">{edu.school}</h4>
                   <p className="text-gray-400">{edu.degree}</p>
                   <span className="text-sm text-gray-500">{edu.duration}</span>
